@@ -1,18 +1,31 @@
 ## Working
 
 
-Once the program starts you should print the menu:
+Once the program starts this menu is printed:
 
 
-1. Create an account
-2. Log into the account
+1. Balance
+2. Add income
+3. Do transfer
+4. Close account
+5. Log out
 0. Exit
 
 
-If the customer chooses ‘Create an account’, you should generate a new card number that satisfies all the conditions described above. Then you should generate a PIN code that belongs to the generated card number. PIN is a sequence of 4 digits; it should be generated in the range from 0000 to 9999.
+If the user asks for Balance, you should read the balance of the account from the database and output it into the console.
 
 
-If the customer chooses ‘Log into account’, you should ask to enter card information.
+Add income item should allow us to deposit money to the account.
 
 
-After the information has been entered correctly, you should allow the user to check the account balance; after creating the account, the balance should be 0. It should also be possible to log out of the account and exit the program.
+Do transfer item should allow transferring money to another account. You should handle the following errors:
+
+
+    If the user tries to transfer more money than he/she has, output: Not enough money!
+    If the user tries to transfer money to the same account, output the following message: You can't transfer money to the same account!
+    If the receiver's card number doesn’t pass the Luhn algorithm, you should output: Probably you made a mistake in the card number. Please try again!
+    If the receiver's card number doesn’t exist, you should output: Such a card does not exist.
+    If there is no error, ask the user how much money they want to transfer and make the transaction.
+
+
+If the user chooses the Close an account item, you should delete that account from the database.
